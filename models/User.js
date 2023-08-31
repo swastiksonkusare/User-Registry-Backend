@@ -17,17 +17,25 @@ const userSchema = new mongoose.Schema({
     unique: true,
     // You can add email validation here
   },
-  mobile: {
-    countryCode: String,
-    number: String,
+  number: {
+    type: String,
+    required: true,
+    unique: true,
   },
+  countryCode: {
+    type: String,
+    required: true,
+  },
+
   address1: {
     type: String,
     required: true,
   },
-  address2: String,
+  address2: {
+    type: String,
+    required: false,
+  },
   state: String,
-  city: String,
   country: String,
   zipCode: Number,
 });
