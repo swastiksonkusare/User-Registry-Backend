@@ -8,9 +8,9 @@ const router = express.Router();
 // Create a user
 router.post("/create", async (req, res) => {
   try {
-    const userData = req.body; // Assuming your request body contains user data
+    const userData = req.body;
     const newUser = new User(userData);
-    await newUser.save(); // Save the new user to the database
+    await newUser.save();
     res.status(201).send(newUser);
   } catch (error) {
     res.status(400).send(error);
