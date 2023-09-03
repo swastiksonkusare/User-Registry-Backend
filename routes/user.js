@@ -13,6 +13,7 @@ router.post("/create", async (req, res) => {
     await newUser.save();
     res.status(201).send(newUser);
   } catch (error) {
+    console.log("Something went wrong");
     res.status(400).send(error);
   }
 });
